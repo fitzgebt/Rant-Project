@@ -11,7 +11,7 @@ export class App extends Component  {
           <h1>Test App Maker</h1>
         </div>
           <PostForm />
-          {/* <PostContainer /> */}
+          <PostContainer />
         <hr />
       </div>
     );
