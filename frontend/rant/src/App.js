@@ -1,4 +1,6 @@
 import React, { Component }  from 'react';
+import PostForm from './components/PostForm'
+import PostContainer from './containers/PostsContainer'
 import './App.css';
 
 export class App extends Component  {
@@ -7,6 +9,8 @@ export class App extends Component  {
       <div className="container-fluid">
         <div className="row title justify-content-center" style={{ paddingTop: '12px' }}>
           <h1>Test App Maker</h1>
+          <PostForm />
+          <PostContainer />
         </div>
         <hr />
       </div>
