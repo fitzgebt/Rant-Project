@@ -61,7 +61,7 @@ class PostForm extends Component {
                                 </div>
                                 <div className="form-group">
                                     <div className="col-md-6 col-md-offset-4">
-                                    <button type="submit" className="btn btn-default">Rant About It</button>
+                                    <button type="submit" className="btn btn-default">Rant About It!</button>
                                     </div>
                                 </div>
                                 </form>

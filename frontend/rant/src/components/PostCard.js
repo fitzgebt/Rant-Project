@@ -1,9 +1,10 @@
 import React from 'react';
-debugger
+// debugger
 const PostCard = ({ post, deletePost }) => 
 
     <div>
         <p>{post.text}</p>
+        <p>{post.author}</p>
     </div>
 
 export default PostCard;

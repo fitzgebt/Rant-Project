@@ -8,6 +8,7 @@ class Posts extends Component {
 
     render() {
         const { posts, deletePost } = this.props
+        // debugger
         return (
             <div>
                 <hr />
