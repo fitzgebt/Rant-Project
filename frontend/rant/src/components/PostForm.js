@@ -37,12 +37,12 @@ class PostForm extends Component {
                             <div className="panel-body">
                                 <form className="form-horizontal" onSubmit={this.handleOnSubmit}>
                                 <div className="form-group">
-                                    <label htmlFor="content" className="col-md-4 control-label">Text</label>
+                                    <label htmlFor="text" className="col-md-4 control-label">Text</label>
                                     <div className="col-md-5">
                                     <textarea
                                         className="form-control"
-                                        name="content"
-                                        value={this.state.content}
+                                        name="text"
+                                        value={this.state.text}
                                         onChange={this.handleOnChange}
                                     />
                                     </div>
