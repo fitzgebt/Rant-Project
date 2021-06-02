@@ -12,6 +12,7 @@ export default (state = {posts: []}, action) => {
         //     return {posts: [...state.posts, action.payload]};
 
         case 'DELETE_POST':
+            debugger
             return state.filter(post => post.id !== action.postId)
 
         case 'FETCH_POSTS':

@@ -15,7 +15,6 @@ class PostsController < ApplicationController
 
     def create
         post = Post.create(post_params)
-        binding.pry
         render json: post, key_transformation: :camel_lower
     end
 
@@ -28,7 +27,9 @@ class PostsController < ApplicationController
     end
 
     def destroy
-
+        p = Post.find_by_id(params[:id])
+        p.destroy
+        render json: Post.all, key_transformation: :camel_lower
     end
 
     private 
