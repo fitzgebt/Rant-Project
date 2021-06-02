@@ -1,13 +1,6 @@
-// export const addPost = post => {
+// export const deletePost = postId => {
 //     return {
-//       type: 'ADD_POST',
-//       post: Object.assign({}, post)
+//       type: 'DELETE_POST',
+//       postId
 //     }
-//   }
-  
-export const deletePost = postId => {
-    return {
-      type: 'DELETE_POST',
-      postId
-    }
-}
+// }

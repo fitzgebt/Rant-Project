@@ -846,3 +846,34 @@ Processing by PostsController#index as */*
 Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.6ms | Allocations: 1403)
 
 
+Started GET "/posts" for ::1 at 2021-06-02 16:06:57 -0700
+Processing by PostsController#index as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.79ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 1.2ms | Allocations: 2015)
+
+
+Started GET "/posts" for ::1 at 2021-06-02 16:09:00 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.76ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.3ms | Allocations: 1384)
+
+
+Started POST "/posts" for ::1 at 2021-06-02 16:09:16 -0700
+Processing by PostsController#create as JSON
+  Parameters: {"post"=>{"text"=>"added new post", "author"=>"me", "id"=>"00d3b60c-57fa-4ba7-80f7-7c28524a02da"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:17:in `create'
+  [1m[36mPost Create (1.5ms)[0m  [1m[32mINSERT INTO "posts" ("id", "text", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["id", 0], ["text", "added new post"], ["author", "me"], ["created_at", "2021-06-02 23:09:16.100287"], ["updated_at", "2021-06-02 23:09:16.100287"]]
+  ↳ app/controllers/posts_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:17:in `create'
+[active_model_serializers] Rendered PostSerializer with ActiveModelSerializers::Adapter::Attributes (0.14ms)
+Completed 200 OK in 3992ms (Views: 0.5ms | ActiveRecord: 5.7ms | Allocations: 9950)
+
+
