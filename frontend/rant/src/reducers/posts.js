@@ -10,6 +10,9 @@ export default (state = [], action) => {
 
         case 'DELETE_POST':
             return state.filter(post => post.id !== action.postId)
+
+        case 'FETCH_POSTS':
+            return {posts: action.payload} 
         
         default: 
             return state;
