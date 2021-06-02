@@ -17,7 +17,7 @@ class PostsContainer extends Component {
 
     render() {
         const { posts, deletePost } = this.props
-        // debugger
+        debugger
         return (
             <>
             <Switch>
@@ -36,7 +36,7 @@ class PostsContainer extends Component {
                         <div className="container">
                             <div className="row">
                                 <div className="col-md-3">
-                                {posts.map(post => <PostCard key={post.id} post={post} deletePost={deletePost} />)}
+                                {posts && posts.map(post => <PostCard key={post.id} post={post} deletePost={deletePost} />)}
                                 </div>
                             </div>
                         </div>

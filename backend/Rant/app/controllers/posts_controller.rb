@@ -2,7 +2,13 @@ require 'pry'
 
 class PostsController < ApplicationController
 
+    def index
+        binding.pry
+        render json: Post.all, key_transformation: :camel_lower
+    end
+
     def show
+        binding.pry
         post - Post.find_by(id: params[:id])
         render json: post, key_transformation: :camel_lower
     end
@@ -25,6 +31,7 @@ class PostsController < ApplicationController
 
     end
 
+    private 
     def post_params
         params.require(:post).permit(:id, :text, :author)
     end

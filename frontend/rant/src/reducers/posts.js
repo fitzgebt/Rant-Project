@@ -7,11 +7,15 @@ export default (state = [], action) => {
         
         case 'ADD_POST':
             return state.concat(action.post);
+        
+        // case 'ADD_POST':
+        //     return {posts: [...state.posts, action.payload]};
 
         case 'DELETE_POST':
             return state.filter(post => post.id !== action.postId)
 
         case 'FETCH_POSTS':
+            debugger
             return {posts: action.payload} 
         
         default: 
