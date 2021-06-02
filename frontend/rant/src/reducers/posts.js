@@ -9,7 +9,7 @@ export default (state = [], action) => {
             return state.concat(action.post);
 
         case 'DELETE_POST':
-            return state.filter(post => post.id === action.postId)
+            return state.filter(post => post.id !== action.postId)
         
         default: 
             return state;
