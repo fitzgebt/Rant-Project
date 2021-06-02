@@ -11,13 +11,14 @@ import fetchPosts from '../actions/fetchPosts'
 class PostsContainer extends Component {
 
     componentDidMount() {
-        debugger
+        console.log("componenDidMount")
         this.props.fetchPosts()
     }
 
     render() {
+        console.log("postContainer render")
         const { posts, deletePost } = this.props
-        debugger
+        
         return (
             <>
             <Switch>
@@ -36,7 +37,8 @@ class PostsContainer extends Component {
                         <div className="container">
                             <div className="row">
                                 <div className="col-md-3">
-                                {posts && posts.map(post => <PostCard key={post.id} post={post} deletePost={deletePost} />)}
+                                    {console.log(posts.posts)}
+                                    {posts.posts && posts.posts.map(post => <PostCard key={post.id} post={post} deletePost={deletePost} />)}
                                 </div>
                             </div>
                         </div>
@@ -56,6 +58,7 @@ class PostsContainer extends Component {
 }
 
 const mapStateToProps = state => {
+    console.log("map state to props", state.posts.posts)
     return ({
       posts: state.posts
     })

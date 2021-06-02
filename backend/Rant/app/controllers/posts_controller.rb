@@ -3,7 +3,7 @@ require 'pry'
 class PostsController < ApplicationController
 
     def index
-        binding.pry
+        # binding.pry
         render json: Post.all, key_transformation: :camel_lower
     end
 

@@ -12,12 +12,12 @@ import thunk from 'redux-thunk'
 let store = createStore(rootReducer, compose(applyMiddleware(thunk),composeWithDevTools()))
 
 ReactDOM.render(
-  <React.StrictMode>
+
     <Router>
       <Provider store={store}>
         <App />
       </Provider>
-    </Router>
-  </React.StrictMode>,
+    </Router>,
+
   document.getElementById('root')
 );

@@ -4,8 +4,10 @@ export default function fetchPosts() {
       .then(function(response) {
         return response.json()
       })
+      // .then(data => console.log("testData", data))
       .then((postsArray) => {
-        dispatch({type: "FETCH_LISTS", payload: postsArray})
+        debugger
+        dispatch({type: "FETCH_POSTS", payload: postsArray})
       })
     }
   }

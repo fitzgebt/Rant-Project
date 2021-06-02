@@ -1,4 +1,4 @@
-export default (state = [], action) => {
+export default (state = {posts: []}, action) => {
 
     let index;
     let post;
@@ -6,7 +6,7 @@ export default (state = [], action) => {
     switch (action.type) {
         
         case 'ADD_POST':
-            return state.concat(action.post);
+            return {posts: [...state.posts, action.payload]};
         
         // case 'ADD_POST':
         //     return {posts: [...state.posts, action.payload]};
@@ -15,7 +15,7 @@ export default (state = [], action) => {
             return state.filter(post => post.id !== action.postId)
 
         case 'FETCH_POSTS':
-            debugger
+            console.log("fetchPosts", action.payload)
             return {posts: action.payload} 
         
         default: 
