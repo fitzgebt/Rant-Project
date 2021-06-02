@@ -5,9 +5,15 @@ import { deletePost } from '../actions/posts';
 import {Route, Switch} from 'react-router-dom'
 import PostForm from '../components/PostForm'
 import Home from '../components/Home';
+import fetchPosts from '../actions/fetchPosts'
 
 
-class Posts extends Component {
+class PostsContainer extends Component {
+
+    componentDidMount() {
+        debugger
+        this.props.fetchPosts()
+    }
 
     render() {
         const { posts, deletePost } = this.props
@@ -55,4 +61,4 @@ const mapStateToProps = state => {
     })
   }
   
-  export default connect(mapStateToProps, { deletePost })(Posts);
+  export default connect(mapStateToProps, { deletePost, fetchPosts })(PostsContainer);
