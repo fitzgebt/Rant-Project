@@ -32,7 +32,13 @@ class Posts extends Component {
                         </div>
                     </div>
                 </Route>
-                <Route exact path="posts/:id" render={(routerProps) => <PostCard {...routerProps}/>}/>
+                <Route 
+                    exact path="posts/:id" 
+                    render={(routerProps) => {
+                        debugger
+                        <PostCard {...routerProps}/>}
+                    }
+                />
             </Switch>
             </>
         )

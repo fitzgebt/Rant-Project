@@ -1,5 +1,5 @@
 import React from 'react';
-// debugger
+debugger
 const PostCard = ({ post, deletePost }) => 
 
     <div>
