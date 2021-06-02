@@ -4,6 +4,8 @@ import PostCard from '../components/PostCard';
 import { deletePost } from '../actions/posts';
 import {Route, Switch} from 'react-router-dom'
 import PostForm from '../components/PostForm'
+import Home from '../components/Home';
+
 
 class Posts extends Component {
 
@@ -13,6 +15,8 @@ class Posts extends Component {
         return (
             <>
             <Switch>
+                <Route exact path="/"><Home /> </Route>
+                <Route exact path="/home"><Home /> </Route>
                 <Route path="/posts/new">
                     <PostForm />
                 </Route>

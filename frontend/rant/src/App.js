@@ -14,7 +14,7 @@ export class App extends Component  {
           <h1>Rant!</h1>
         </div>
           <NavBar />
-          <Home />
+          {/* <Home /> */}
           {/* <PostForm /> */}
           <PostContainer />
         <hr />
