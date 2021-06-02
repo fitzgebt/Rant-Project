@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {withRouter} from 'react-router-dom'
 import uuid from 'uuid';
 import { connect } from 'react-redux';
 import { addPost } from '../actions/posts';
@@ -22,12 +23,13 @@ class PostForm extends Component {
         const post = {...this.state, id: uuid() };
         this.props.addPost(post);
         this.setState({
-          text: '',
-          author: ''
-        });
+            text: '',
+            author: ''
+        })
+        this.props.history.push("/posts")
       }
 
-    render() {
+    render =() => {
 
         return (
             <div className="container">
@@ -35,7 +37,7 @@ class PostForm extends Component {
                     <div className="col-md-8 col-md-offset-2">
                         <div className="panel panel-default">
                             <div className="panel-body">
-                                <form className="form-horizontal" onSubmit={this.handleOnSubmit}>
+                                <form className="form-horizontal" onSubmit={this.handleOnSubmit.bind(this)}>
                                 <div className="form-group">
                                     <label htmlFor="text" className="col-md-4 control-label">Text</label>
                                     <div className="col-md-5">
@@ -76,4 +78,4 @@ class PostForm extends Component {
 
 }
 
-export default connect(null, { addPost })(PostForm);
+export default withRouter(connect(null, { addPost })(PostForm))

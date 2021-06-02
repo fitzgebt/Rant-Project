@@ -3,6 +3,7 @@ import PostForm from './components/PostForm'
 import PostContainer from './containers/PostsContainer'
 import './App.css';
 import NavBar from './components/NavBar';
+import Home from './components/Home';
 
 
 export class App extends Component  {
@@ -10,10 +11,11 @@ export class App extends Component  {
     return (
       <div className="container-fluid">
         <div className="row title justify-content-center" style={{ paddingTop: '12px' }}>
-          <h1>Test App Maker</h1>
+          <h1>Rant!</h1>
         </div>
           <NavBar />
-          <PostForm />
+          <Home />
+          {/* <PostForm /> */}
           <PostContainer />
         <hr />
       </div>
