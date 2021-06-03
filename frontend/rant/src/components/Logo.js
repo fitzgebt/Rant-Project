@@ -4,7 +4,12 @@ const Logo = () => {
 
         return(
             <div className="container logo">
-                <img src={RANT} alt="Logo" />
+                <img 
+                    src={RANT} 
+                    alt="Logo"
+                    width="175"
+                    height="175"
+                   />
             </div>
 
         ) 

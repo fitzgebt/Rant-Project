@@ -15973,3 +15973,21 @@ Processing by PostsController#index as */*
 Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.6ms | Allocations: 1053)
 
 
+Started GET "/posts" for ::1 at 2021-06-03 14:44:14 -0700
+Processing by PostsController#index as */*
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.67ms)
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 1.9ms | Allocations: 1664)
+
+
+Started GET "/posts" for ::1 at 2021-06-03 14:45:30 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.56ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms | Allocations: 1053)
+
+

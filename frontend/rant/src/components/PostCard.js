@@ -6,7 +6,6 @@ const PostCard = ({ post, deletePost }) =>
     <div >
         <p>{post.text}</p>
         <p>{post.author}</p>
-        <p>{post.id}</p>
         <button
             type="button"
             onClick={() => deletePost(post.id)}

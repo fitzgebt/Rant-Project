@@ -37,7 +37,7 @@ class PostsContainer extends Component {
                         </div>
                         <hr />
 
-                        <div className="container" class="overflow-scroll">
+                        <div className="container" >
                             <div className="row" >
                                 <div className="col-md-3" >
                                     {posts.posts && posts.posts.map(post => <PostCard key={post.id} post={post} deletePost={deletePost} />)}
