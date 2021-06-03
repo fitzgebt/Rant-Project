@@ -6,8 +6,7 @@ import {Route, Switch} from 'react-router-dom'
 import PostForm from '../components/PostForm'
 import Home from '../components/Home';
 import fetchPosts from '../actions/fetchPosts'
-import { Link } from 'react-router-dom';
-
+import Logo from '../components/Logo'
 
 class PostsContainer extends Component {
 
@@ -38,6 +37,7 @@ class PostsContainer extends Component {
                         <hr />
 
                         <div className="container" >
+                            
                             <div className="row" >
                                 <div className="col-md-3" >
                                     {posts.posts && posts.posts.map(post => <PostCard key={post.id} post={post} deletePost={deletePost} />)}

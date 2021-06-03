@@ -18,3 +18,15 @@ code {
   right: 100px;
   
 }
+
+.card img{
+  position: absolute;
+  bottom: 30px;
+  right: -40px;
+  opacity: 0.6;
+  transform: rotate(45deg);
+}
+
+.card {
+  overflow: hidden;
+}
