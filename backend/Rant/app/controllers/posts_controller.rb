@@ -3,13 +3,12 @@ require 'pry'
 class PostsController < ApplicationController
 
     def index
-        # binding.pry
         render json: Post.all, key_transformation: :camel_lower
     end
 
     def show
         binding.pry
-        post - Post.find_by(id: params[:id])
+        post = Post.find_by(id: params[:id])
         render json: post, key_transformation: :camel_lower
     end
 
@@ -29,7 +28,7 @@ class PostsController < ApplicationController
     def destroy
         p = Post.find_by_id(params[:id])
         p.destroy
-        render json: Post.all, key_transformation: :camel_lower
+        render json: p, key_transformation: :camel_lower
     end
 
     private 

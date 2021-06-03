@@ -6,7 +6,6 @@ export default function deletePost(postId) {
         method: "DELETE",
         headers: {Accept: "application/json", "Content-Type": "application/json"},
       }).then(r => r.json())
-    //   .then (console.log("deletePost", post => post))
       .then(post => dispatch({type: "DELETE_POST", payload: post.id}))
     }
 
