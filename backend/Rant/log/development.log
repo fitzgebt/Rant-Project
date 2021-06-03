@@ -1375,3 +1375,55 @@ Processing by PostsController#destroy as JSON
 Completed 200 OK in 22ms (Views: 2.5ms | ActiveRecord: 5.9ms | Allocations: 5255)
 
 
+  [1m[35m (9.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePosts (20210601192859)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "posts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "text" varchar, "author" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210601192859"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-06-03 18:18:46.461469"], ["updated_at", "2021-06-03 18:18:46.461469"]]
+  [1m[36mTRANSACTION (13.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("text", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "My job sent me a cup and a pack of mints to thank me for my 5 years…I’m on Indeed as we speak"], ["author", "Coach C."], ["created_at", "2021-06-03 18:18:50.941476"], ["updated_at", "2021-06-03 18:18:50.941476"]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("text", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "A guy got mad and told to take my mask off at a gas station. I’ve practiced this interaction in my head a million times. but I got nervous and yelled “fat chance!!!”....like some sort of 40s newsboy"], ["author", "Laura Peek"], ["created_at", "2021-06-03 18:18:50.948301"], ["updated_at", "2021-06-03 18:18:50.948301"]]
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("text", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "My apartment is overdue for a deep cleaning, if anyone wants to give me a writing deadline"], ["author", "Brandon Follick"], ["created_at", "2021-06-03 18:18:50.954979"], ["updated_at", "2021-06-03 18:18:50.954979"]]
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/posts" for ::1 at 2021-06-03 11:19:07 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.39ms)
+Completed 200 OK in 137ms (Views: 85.9ms | ActiveRecord: 1.1ms | Allocations: 8192)
+
+
+Started POST "/posts" for ::1 at 2021-06-03 11:22:31 -0700
+Processing by PostsController#create as JSON
+  Parameters: {"post"=>{"text"=>"OBS Studio 27.0 is finally here! This release includes undo/redo, source visibility transitions, display capture improvements, a missing file browser, track matte transitions, Wayland capture, and much more! Details in thread.\n", "author"=>"OBS", "id"=>"b1879d3f-b013-4c8f-9b08-045e716c0459"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:17:in `create'
+  [1m[36mPost Create (1.4ms)[0m  [1m[32mINSERT INTO "posts" ("id", "text", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["id", 0], ["text", "OBS Studio 27.0 is finally here! This release includes undo/redo, source visibility transitions, display capture improvements, a missing file browser, track matte transitions, Wayland capture, and much more! Details in thread.\n"], ["author", "OBS"], ["created_at", "2021-06-03 18:22:31.502755"], ["updated_at", "2021-06-03 18:22:31.502755"]]
+  ↳ app/controllers/posts_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:17:in `create'
+[active_model_serializers] Rendered PostSerializer with ActiveModelSerializers::Adapter::Attributes (0.38ms)
+Completed 200 OK in 17ms (Views: 2.5ms | ActiveRecord: 6.6ms | Allocations: 3352)
+
+
