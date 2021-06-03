@@ -1,7 +1,5 @@
 export default function postsReducer(state = {posts: []}, action) {
 
-    // let index;
-    // let post;
 
     switch (action.type) {
         
@@ -10,7 +8,6 @@ export default function postsReducer(state = {posts: []}, action) {
 
         case 'DELETE_POST':
             return {posts: state.posts.filter(post => post.id !== action.payload)}
-            // return state.filter(post => post.id !== action.postId)
 
         case 'FETCH_POSTS':
             console.log("fetchPosts", action.payload)

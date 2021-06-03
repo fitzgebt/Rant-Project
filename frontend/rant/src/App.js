@@ -2,6 +2,7 @@ import React, { Component }  from 'react';
 import PostContainer from './containers/PostsContainer'
 import './App.css';
 import NavBar from './components/NavBar';
+import Logo from "./components/Logo"
 
 
 export class App extends Component  {
@@ -12,6 +13,7 @@ export class App extends Component  {
           <h1>Rant!</h1>
         </div>
           <NavBar />
+          <Logo />
           <PostContainer />
         <hr />
       </div>

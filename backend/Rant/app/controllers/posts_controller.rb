@@ -26,9 +26,9 @@ class PostsController < ApplicationController
     end
 
     def destroy
-        p = Post.find_by_id(params[:id])
-        p.destroy
-        render json: p, key_transformation: :camel_lower
+        post = Post.find_by_id(params[:id])
+        post.destroy
+        render json: post, key_transformation: :camel_lower
     end
 
     private 

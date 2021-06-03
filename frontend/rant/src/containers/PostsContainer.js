@@ -48,9 +48,9 @@ class PostsContainer extends Component {
                 </Route>
                 <Route 
                     path="/posts/:id" 
-                    render={(routerProps) => {
+                    render={(routerProps, posts) => {
                         debugger
-                        return <PostCard {...routerProps}/>}
+                        return <PostCard {...routerProps}{...this.props.posts.posts}/>}
                     }
                 />
             </Switch>
