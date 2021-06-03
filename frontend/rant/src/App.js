@@ -1,9 +1,7 @@
 import React, { Component }  from 'react';
-import PostForm from './components/PostForm'
 import PostContainer from './containers/PostsContainer'
 import './App.css';
 import NavBar from './components/NavBar';
-import Home from './components/Home';
 
 
 export class App extends Component  {
@@ -14,8 +12,6 @@ export class App extends Component  {
           <h1>Rant!</h1>
         </div>
           <NavBar />
-          {/* <Home /> */}
-          {/* <PostForm /> */}
           <PostContainer />
         <hr />
       </div>
