@@ -48,9 +48,8 @@ class PostsContainer extends Component {
                 </Route>
                 <Route 
                     path="/posts/:id" 
-                    render={(routerProps, posts) => {
-                        debugger
-                        return <PostCard {...routerProps}{...this.props.posts.posts}/>}
+                    render={(routerProps) => {
+                        return <PostCard {...routerProps} post={posts.posts.find(post => post.id === parseInt(routerProps.match.params.id))}/>}
                     }
                 />
             </Switch>

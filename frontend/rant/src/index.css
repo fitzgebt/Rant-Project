@@ -14,10 +14,12 @@ code {
 
 .logo img{
   position: absolute;
-  top: 20px;
+  top: 45px;
   right: 100px;
   
 }
+
+body {background-color: #E8F7FE}
 
 .card img{
   position: absolute;
@@ -26,6 +28,7 @@ code {
   opacity: 0.6;
   transform: rotate(45deg);
 }
+
 
 .card {
   overflow: hidden;

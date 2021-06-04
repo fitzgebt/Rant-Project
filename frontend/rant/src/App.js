@@ -9,7 +9,7 @@ export class App extends Component  {
   render() {
     return (
       <div className="container-fluid">
-        <div className="row title justify-content-center" style={{ paddingTop: '12px' }}>
+        <div className="row title justify-content-center" style={{ paddingTop: '40px' }}>
           <h1>Rant!</h1>
         </div>
           <NavBar />
