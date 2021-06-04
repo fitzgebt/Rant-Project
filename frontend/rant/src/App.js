@@ -17,9 +17,9 @@ export class App extends Component  {
           <PostContainer />
         <hr />
 
-        <fr>
-        <Footer />
-        </fr>
+        <div className="footer">
+          <Footer />
+        </div>
       </div>
     );
   }

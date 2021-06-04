@@ -43,3 +43,10 @@ body {background-color: #E8F7FE}
   left: 0;
   width: 100%;
 }
+
+.col-md-3{
+  overflow: scroll;
+  height: 600px;
+  width: 317px;
+}
+

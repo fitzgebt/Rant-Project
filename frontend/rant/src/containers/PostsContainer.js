@@ -6,7 +6,6 @@ import {Route, Switch} from 'react-router-dom'
 import PostForm from '../components/PostForm'
 import Home from '../components/Home';
 import fetchPosts from '../actions/fetchPosts'
-import Logo from '../components/Logo'
 
 class PostsContainer extends Component {
 
