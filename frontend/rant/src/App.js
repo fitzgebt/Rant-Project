@@ -3,7 +3,7 @@ import PostContainer from './containers/PostsContainer'
 import './App.css';
 import NavBar from './components/NavBar';
 import Logo from "./components/Logo"
-
+import Footer from './components/Footer'
 
 export class App extends Component  {
   render() {
@@ -16,6 +16,10 @@ export class App extends Component  {
           <Logo />
           <PostContainer />
         <hr />
+
+        <fr>
+        <Footer />
+        </fr>
       </div>
     );
   }
