@@ -8,9 +8,9 @@ import Footer from './components/Footer'
 export class App extends Component  {
   render() {
     return (
-      <div className="container-fluid">
+      <div className="container">
         <div className="row title justify-content-center" style={{ paddingTop: '40px' }}>
-          <h1>Rant!</h1>
+          <h1>Welcome to Rant!</h1>
         </div>
           <NavBar />
           <Logo />

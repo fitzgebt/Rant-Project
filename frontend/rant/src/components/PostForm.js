@@ -50,7 +50,7 @@ class PostForm extends Component {
                                     </div>
                                 </div>
                                 <div className="form-group">
-                                    <label htmlFor="author" className="col-md-4 control-label">Author</label>
+                                    <label htmlFor="author" className="col-md-4 control-label">Codename</label>
                                     <div className="col-md-5">
                                     <input
                                         className="form-control"
