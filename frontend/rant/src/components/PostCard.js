@@ -24,6 +24,7 @@ const PostCard = ({ post, deletePost }) =>
 
             <ul>
                 <li key={post.id}><Link to={`/posts/${post.id}`}>See this Rant</Link></li>
+                <li key={post.id + "edit"}><Link to={`/posts/${post.id}/edit`}>Edit this Rant</Link></li>
             </ul>
       
         </div>

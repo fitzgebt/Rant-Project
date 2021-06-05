@@ -10,13 +10,11 @@ import fetchPosts from '../actions/fetchPosts'
 class PostsContainer extends Component {
 
     componentDidMount() {
-        console.log("componenDidMount")
         this.props.fetchPosts()
     }
 
     render() {
-        console.log("postContainer render")
-        console.log(this.props)
+
         const { posts, deletePost } = this.props
         
         return (
@@ -44,13 +42,15 @@ class PostsContainer extends Component {
                             </div>
                         </div>
                     </div>
-                </Route>
+                    </Route>
+                
                 <Route 
-                    path="/posts/:id" 
+                    exact path="/posts/:id" 
                     render={(routerProps) => {
                         return <PostCard {...routerProps} post={posts.posts.find(post => post.id === parseInt(routerProps.match.params.id))}/>}
                     }
                 />
+
             </Switch>
             </>
         )
@@ -58,7 +58,6 @@ class PostsContainer extends Component {
 }
 
 const mapStateToProps = state => {
-    console.log("map state to props", state.posts.posts)
     return ({
       posts: state.posts
     })

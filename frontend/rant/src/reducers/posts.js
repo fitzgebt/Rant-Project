@@ -12,9 +12,6 @@ export default function postsReducer(state = {posts: []}, action) {
         case 'FETCH_POSTS':
             return {posts: action.payload} 
         
-        case 'EDIT_POST':
-            const editedPostsArray = state.posts.map(post => post.id === action.payload.id ? action.payload : post)
-            return {posts: editedPostsArray}
         default: 
             return state;
     }
