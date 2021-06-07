@@ -78,11 +78,5 @@ class PostForm extends Component {
 
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        addPost : function(post){ dispatch({type: "ADD_POST", payload: post}) },
-        editPost: function(post){ dispatch({type: "EDIT_POST", payload: post}) }
-    }
-}
 
-export default withRouter(connect(null, { addPost, editPost })(PostForm))
+export default withRouter(connect(null, { addPost })(PostForm))
