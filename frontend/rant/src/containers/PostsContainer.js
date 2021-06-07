@@ -47,7 +47,7 @@ class PostsContainer extends Component {
                 <Route 
                     exact path="/posts/:id" 
                     render={(routerProps) => {
-                        return <PostCard {...routerProps} post={posts.posts.find(post => post.id === parseInt(routerProps.match.params.id))}/>}
+                        return <PostCard {...routerProps} post={posts.posts && posts.posts.find(post => post.id === parseInt(routerProps.match.params.id))}/>}
                     }
                 />
 
