@@ -2,8 +2,6 @@
 
 Welcome to RANT. Rant is a simple social media platform, allowing users to post their thoughts (RANTs and RAVES) anonymously. 
 
-Things you may want to cover:
-
 * Ruby version
     -RANT utilizes Ruby version 2.6.1
 
