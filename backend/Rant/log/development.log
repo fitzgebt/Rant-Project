@@ -16966,3 +16966,497 @@ Processing by PostsController#index as */*
 Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 1.3ms | Allocations: 1165)
 
 
+Started GET "/posts" for ::1 at 2021-06-07 10:50:42 -0700
+Processing by PostsController#index as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.38ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.8ms | Allocations: 1777)
+
+
+Started GET "/posts" for ::1 at 2021-06-07 10:53:09 -0700
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.8ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.4ms | Allocations: 1165)
+
+
+Started DELETE "/posts/0" for ::1 at 2021-06-07 10:53:21 -0700
+Processing by PostsController#destroy as JSON
+  Parameters: {"id"=>"0", "post"=>{}}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:29:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:30:in `destroy'
+  [1m[36mPost Destroy (2.5ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 0]]
+  ↳ app/controllers/posts_controller.rb:30:in `destroy'
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:30:in `destroy'
+[active_model_serializers] Rendered PostSerializer with ActiveModelSerializers::Adapter::Attributes (0.18ms)
+Completed 200 OK in 59ms (Views: 0.7ms | ActiveRecord: 7.1ms | Allocations: 4209)
+
+
+Started POST "/posts" for ::1 at 2021-06-07 10:53:35 -0700
+Processing by PostsController#create as JSON
+  Parameters: {"post"=>{"text"=>"Adding new posts is so easy!", "author"=>"Annon", "id"=>"7b04f038-2b91-4081-bf2a-8ccf26f9fdb9"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:16:in `create'
+  [1m[36mPost Create (1.4ms)[0m  [1m[32mINSERT INTO "posts" ("id", "text", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["id", 7], ["text", "Adding new posts is so easy!"], ["author", "Annon"], ["created_at", "2021-06-07 17:53:35.936901"], ["updated_at", "2021-06-07 17:53:35.936901"]]
+  ↳ app/controllers/posts_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:16:in `create'
+[active_model_serializers] Rendered PostSerializer with ActiveModelSerializers::Adapter::Attributes (0.31ms)
+Completed 200 OK in 13ms (Views: 1.2ms | ActiveRecord: 5.2ms | Allocations: 2678)
+
+
+  [1m[35m (4.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("text", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "My job sent me a cup and a pack of mints to thank me for my 5 years…I’m on Indeed as we speak"], ["author", "Coach C."], ["created_at", "2021-09-08 21:42:53.521056"], ["updated_at", "2021-09-08 21:42:53.521056"]]
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("text", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "A guy got mad and told to take my mask off at a gas station. I’ve practiced this interaction in my head a million times. but I got nervous and yelled “fat chance!!!”....like some sort of 40s newsboy"], ["author", "Laura Peek"], ["created_at", "2021-09-08 21:42:53.528820"], ["updated_at", "2021-09-08 21:42:53.528820"]]
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("text", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "My apartment is overdue for a deep cleaning, if anyone wants to give me a writing deadline"], ["author", "Brandon Follick"], ["created_at", "2021-09-08 21:42:53.536120"], ["updated_at", "2021-09-08 21:42:53.536120"]]
+  [1m[36mTRANSACTION (4.6ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for ::1 at 2021-09-08 14:43:05 -0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/fitzgebt/.rvm/gems/ruby-2.6.1/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/fitzgebt/.rvm/gems/ruby-2.6.1/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 9.6ms | Allocations: 477)
+Completed 200 OK in 60ms (Views: 23.7ms | ActiveRecord: 0.0ms | Allocations: 4121)
+
+
+Started GET "/" for ::1 at 2021-09-08 14:43:16 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/fitzgebt/.rvm/gems/ruby-2.6.1/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/fitzgebt/.rvm/gems/ruby-2.6.1/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.1ms | Allocations: 191)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms | Allocations: 753)
+
+
+Started GET "/posts" for ::1 at 2021-09-08 14:46:15 -0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.59ms)
+Completed 200 OK in 70ms (Views: 64.7ms | ActiveRecord: 0.9ms | Allocations: 8610)
+
+
+Started GET "/posts" for ::1 at 2021-09-08 16:58:06 -0700
+Processing by PostsController#index as */*
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.77ms)
+Completed 200 OK in 60ms (Views: 51.7ms | ActiveRecord: 11.0ms | Allocations: 2137)
+
+
+Started GET "/posts" for ::1 at 2021-09-10 14:36:16 -0700
+Processing by PostsController#index as */*
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.1ms)
+Completed 200 OK in 58ms (Views: 52.4ms | ActiveRecord: 9.8ms | Allocations: 2138)
+
+
+Started POST "/posts" for ::1 at 2021-09-10 14:36:44 -0700
+Processing by PostsController#create as JSON
+  Parameters: {"post"=>{"text"=>"Testing", "author"=>"Fitz", "id"=>"e9a91e65-ada7-4e71-b573-edf9631836f3"}}
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:16:in `create'
+  [1m[36mPost Create (15.2ms)[0m  [1m[32mINSERT INTO "posts" ("id", "text", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["id", 0], ["text", "Testing"], ["author", "Fitz"], ["created_at", "2021-09-10 21:36:44.308768"], ["updated_at", "2021-09-10 21:36:44.308768"]]
+  ↳ app/controllers/posts_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:16:in `create'
+[active_model_serializers] Rendered PostSerializer with ActiveModelSerializers::Adapter::Attributes (0.15ms)
+Completed 200 OK in 63ms (Views: 0.9ms | ActiveRecord: 18.7ms | Allocations: 3791)
+
+
+Started DELETE "/posts/2" for ::1 at 2021-09-10 14:37:39 -0700
+Processing by PostsController#destroy as JSON
+  Parameters: {"id"=>"2", "post"=>{}}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:29:in `destroy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:30:in `destroy'
+  [1m[36mPost Destroy (1.2ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/posts_controller.rb:30:in `destroy'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:30:in `destroy'
+[active_model_serializers] Rendered PostSerializer with ActiveModelSerializers::Adapter::Attributes (0.17ms)
+Completed 200 OK in 208ms (Views: 1.2ms | ActiveRecord: 3.8ms | Allocations: 6285)
+
+
+Started DELETE "/posts/3" for ::1 at 2021-09-10 14:37:42 -0700
+Processing by PostsController#destroy as JSON
+  Parameters: {"id"=>"3", "post"=>{}}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:29:in `destroy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:30:in `destroy'
+  [1m[36mPost Destroy (0.7ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/posts_controller.rb:30:in `destroy'
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:30:in `destroy'
+[active_model_serializers] Rendered PostSerializer with ActiveModelSerializers::Adapter::Attributes (0.26ms)
+Completed 200 OK in 13ms (Views: 1.1ms | ActiveRecord: 6.1ms | Allocations: 4466)
+
+
+Started GET "/" for ::1 at 2021-11-28 12:53:27 -0800
+  [1m[35m (9.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/fitzgebt/.rvm/gems/ruby-2.6.1/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/fitzgebt/.rvm/gems/ruby-2.6.1/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 34.0ms | Allocations: 314)
+Completed 200 OK in 119ms (Views: 62.3ms | ActiveRecord: 0.0ms | Allocations: 2441)
+
+
+Started GET "/favicon.ico" for ::1 at 2021-11-28 12:53:28 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/posts" for ::1 at 2021-11-28 12:54:27 -0800
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.92ms)
+Completed 200 OK in 101ms (Views: 80.4ms | ActiveRecord: 1.3ms | Allocations: 8495)
+
+
+Started DELETE "/posts/1" for ::1 at 2021-11-28 12:55:22 -0800
+Processing by PostsController#destroy as JSON
+  Parameters: {"id"=>"1", "post"=>{}}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:29:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:30:in `destroy'
+  [1m[36mPost Destroy (1.0ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/posts_controller.rb:30:in `destroy'
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:30:in `destroy'
+[active_model_serializers] Rendered PostSerializer with ActiveModelSerializers::Adapter::Attributes (0.35ms)
+Completed 200 OK in 35ms (Views: 1.7ms | ActiveRecord: 4.3ms | Allocations: 5976)
+
+
+Started POST "/posts" for ::1 at 2021-11-28 12:57:01 -0800
+Processing by PostsController#create as JSON
+  Parameters: {"post"=>{"text"=>"Dogs are wild animals that live in our house. ", "author"=>"Catlover34", "id"=>"4c630d9b-a047-446b-9d42-67fced3185af"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:16:in `create'
+  [1m[36mPost Create (2.6ms)[0m  [1m[32mINSERT INTO "posts" ("id", "text", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["id", 4], ["text", "Dogs are wild animals that live in our house. "], ["author", "Catlover34"], ["created_at", "2021-11-28 20:57:01.504782"], ["updated_at", "2021-11-28 20:57:01.504782"]]
+  ↳ app/controllers/posts_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:16:in `create'
+[active_model_serializers] Rendered PostSerializer with ActiveModelSerializers::Adapter::Attributes (0.36ms)
+Completed 200 OK in 20ms (Views: 1.4ms | ActiveRecord: 7.5ms | Allocations: 2058)
+
+
+Started DELETE "/posts/0" for ::1 at 2021-11-29 10:55:29 -0800
+Processing by PostsController#destroy as JSON
+  Parameters: {"id"=>"0", "post"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/posts_controller.rb:29:in `destroy'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:29:in `destroy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:30:in `destroy'
+  [1m[36mPost Destroy (0.8ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 0]]
+  ↳ app/controllers/posts_controller.rb:30:in `destroy'
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:30:in `destroy'
+[active_model_serializers] Rendered PostSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+Completed 200 OK in 20ms (Views: 1.4ms | ActiveRecord: 4.4ms | Allocations: 4568)
+
+
+Started DELETE "/posts/8" for ::1 at 2021-11-29 11:06:46 -0800
+Processing by PostsController#destroy as JSON
+  Parameters: {"id"=>"8", "post"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/posts_controller.rb:29:in `destroy'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:29:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:30:in `destroy'
+  [1m[36mPost Destroy (2.1ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 8]]
+  ↳ app/controllers/posts_controller.rb:30:in `destroy'
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:30:in `destroy'
+[active_model_serializers] Rendered PostSerializer with ActiveModelSerializers::Adapter::Attributes (0.26ms)
+Completed 200 OK in 31ms (Views: 1.0ms | ActiveRecord: 8.5ms | Allocations: 4954)
+
+
+Started POST "/posts" for ::1 at 2021-11-29 11:07:11 -0800
+Processing by PostsController#create as JSON
+  Parameters: {"post"=>{"text"=>"I ate way too much turkey for the holidays!", "author"=>"FamilyMan", "id"=>"7c509b06-6858-4dc8-a5d0-5df4451872f9"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:16:in `create'
+  [1m[36mPost Create (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("id", "text", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["id", 7], ["text", "I ate way too much turkey for the holidays!"], ["author", "FamilyMan"], ["created_at", "2021-11-29 19:07:11.291010"], ["updated_at", "2021-11-29 19:07:11.291010"]]
+  ↳ app/controllers/posts_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:16:in `create'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.7ms | Allocations: 1825)
+
+
+  
+ActiveRecord::RecordNotUnique (SQLite3::ConstraintException: UNIQUE constraint failed: posts.id):
+  
+app/controllers/posts_controller.rb:16:in `create'
+Started POST "/posts" for ::1 at 2021-11-29 11:07:38 -0800
+Processing by PostsController#create as JSON
+  Parameters: {"post"=>{"text"=>"Test post", "author"=>"me", "id"=>"42dedab2-2705-4957-9069-bab940da9411"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:16:in `create'
+  [1m[36mPost Create (1.4ms)[0m  [1m[32mINSERT INTO "posts" ("id", "text", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["id", 42], ["text", "Test post"], ["author", "me"], ["created_at", "2021-11-29 19:07:38.350330"], ["updated_at", "2021-11-29 19:07:38.350330"]]
+  ↳ app/controllers/posts_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (10.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:16:in `create'
+[active_model_serializers] Rendered PostSerializer with ActiveModelSerializers::Adapter::Attributes (0.18ms)
+Completed 200 OK in 27ms (Views: 1.0ms | ActiveRecord: 12.0ms | Allocations: 4020)
+
+
+Started GET "/posts" for ::1 at 2021-11-29 11:07:45 -0800
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.39ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.3ms | Allocations: 1295)
+
+
+Started GET "/" for ::1 at 2021-12-01 10:57:11 -0800
+  [1m[35m (10.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/fitzgebt/.rvm/gems/ruby-2.6.1/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/fitzgebt/.rvm/gems/ruby-2.6.1/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 33.4ms | Allocations: 314)
+Completed 200 OK in 121ms (Views: 62.6ms | ActiveRecord: 0.0ms | Allocations: 2441)
+
+
+Started GET "/posts" for ::1 at 2021-12-01 10:57:42 -0800
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.47ms)
+Completed 200 OK in 85ms (Views: 66.3ms | ActiveRecord: 0.9ms | Allocations: 8381)
+
+
+Started GET "/posts" for ::1 at 2021-12-01 11:01:48 -0800
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.65ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.2ms | Allocations: 1297)
+
+
+Started GET "/posts" for ::1 at 2021-12-01 11:01:51 -0800
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.35ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.4ms | Allocations: 1297)
+
+
+Started GET "/" for ::1 at 2021-12-01 11:05:55 -0800
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/fitzgebt/.rvm/gems/ruby-2.6.1/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/fitzgebt/.rvm/gems/ruby-2.6.1/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 9.4ms | Allocations: 314)
+Completed 200 OK in 36ms (Views: 13.6ms | ActiveRecord: 0.0ms | Allocations: 2442)
+
+
+Started GET "/favicon.ico" for ::1 at 2021-12-01 11:05:56 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/posts" for ::1 at 2021-12-01 11:06:32 -0800
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.48ms)
+Completed 200 OK in 15ms (Views: 10.3ms | ActiveRecord: 0.8ms | Allocations: 8383)
+
+
+Started GET "/posts" for ::1 at 2021-12-01 11:11:08 -0800
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.85ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.3ms | Allocations: 1297)
+
+
+Started GET "/posts" for ::1 at 2021-12-01 11:12:02 -0800
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.04ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.4ms | Allocations: 1297)
+
+
+Started GET "/posts" for ::1 at 2021-12-01 11:13:49 -0800
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.65ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.6ms | Allocations: 1297)
+
+
+Started DELETE "/posts/4" for ::1 at 2021-12-01 11:14:07 -0800
+Processing by PostsController#destroy as JSON
+  Parameters: {"id"=>"4", "post"=>{}}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:28:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:29:in `destroy'
+  [1m[36mPost Destroy (0.9ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/posts_controller.rb:29:in `destroy'
+  [1m[36mTRANSACTION (11.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:29:in `destroy'
+[active_model_serializers] Rendered PostSerializer with ActiveModelSerializers::Adapter::Attributes (0.22ms)
+Completed 200 OK in 63ms (Views: 1.8ms | ActiveRecord: 12.6ms | Allocations: 5950)
+
+
+Started GET "/posts" for ::1 at 2021-12-01 11:14:57 -0800
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.35ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.3ms | Allocations: 1165)
+
+
+Started DELETE "/posts/7" for ::1 at 2021-12-01 11:15:04 -0800
+Processing by PostsController#destroy as JSON
+  Parameters: {"id"=>"7", "post"=>{}}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:28:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:29:in `destroy'
+  [1m[36mPost Destroy (1.1ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/posts_controller.rb:29:in `destroy'
+  [1m[36mTRANSACTION (10.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:29:in `destroy'
+[active_model_serializers] Rendered PostSerializer with ActiveModelSerializers::Adapter::Attributes (0.14ms)
+Completed 200 OK in 23ms (Views: 1.0ms | ActiveRecord: 12.6ms | Allocations: 4468)
+
+
+Started GET "/posts" for ::1 at 2021-12-01 11:16:50 -0800
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.44ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.4ms | Allocations: 1051)
+
+
+Started GET "/posts" for ::1 at 2021-12-01 11:19:04 -0800
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.57ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.4ms | Allocations: 1051)
+
+
+Started GET "/posts" for ::1 at 2021-12-01 11:19:56 -0800
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.44ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.3ms | Allocations: 1051)
+
+
+Started GET "/posts" for ::1 at 2021-12-01 11:20:07 -0800
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.82ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.3ms | Allocations: 1051)
+
+
+Started GET "/posts" for ::1 at 2021-12-19 20:33:10 -0800
+  [1m[35m (8.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.42ms)
+Completed 200 OK in 122ms (Views: 69.1ms | ActiveRecord: 0.9ms | Allocations: 8154)
+
+
+Started DELETE "/posts/42" for ::1 at 2021-12-19 20:33:20 -0800
+Processing by PostsController#destroy as JSON
+  Parameters: {"id"=>"42", "post"=>{}}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:28:in `destroy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:29:in `destroy'
+  [1m[36mPost Destroy (1.2ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 42]]
+  ↳ app/controllers/posts_controller.rb:29:in `destroy'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:29:in `destroy'
+[active_model_serializers] Rendered PostSerializer with ActiveModelSerializers::Adapter::Attributes (0.13ms)
+Completed 200 OK in 22ms (Views: 1.1ms | ActiveRecord: 3.8ms | Allocations: 5012)
+
+
+Started POST "/posts" for ::1 at 2021-12-19 20:33:37 -0800
+Processing by PostsController#create as JSON
+  Parameters: {"post"=>{"text"=>"This is a test post of the view page\n", "author"=>"Fitz", "id"=>"6ca3a852-015e-4f88-a828-cf17a5a57f05"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:15:in `create'
+  [1m[36mPost Create (1.2ms)[0m  [1m[32mINSERT INTO "posts" ("id", "text", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["id", 6], ["text", "This is a test post of the view page\n"], ["author", "Fitz"], ["created_at", "2021-12-20 04:33:37.309040"], ["updated_at", "2021-12-20 04:33:37.309040"]]
+  ↳ app/controllers/posts_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:15:in `create'
+[active_model_serializers] Rendered PostSerializer with ActiveModelSerializers::Adapter::Attributes (0.23ms)
+Completed 200 OK in 16ms (Views: 1.1ms | ActiveRecord: 7.6ms | Allocations: 4143)
+
+
+Started DELETE "/posts/6" for ::1 at 2021-12-19 20:33:41 -0800
+Processing by PostsController#destroy as JSON
+  Parameters: {"id"=>"6", "post"=>{}}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:28:in `destroy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:29:in `destroy'
+  [1m[36mPost Destroy (0.8ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 6]]
+  ↳ app/controllers/posts_controller.rb:29:in `destroy'
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:29:in `destroy'
+[active_model_serializers] Rendered PostSerializer with ActiveModelSerializers::Adapter::Attributes (0.14ms)
+Completed 200 OK in 10ms (Views: 0.7ms | ActiveRecord: 3.7ms | Allocations: 4105)
+
+
+Started DELETE "/posts/10" for ::1 at 2021-12-19 20:33:59 -0800
+Processing by PostsController#destroy as JSON
+  Parameters: {"id"=>"10", "post"=>{}}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:28:in `destroy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:29:in `destroy'
+  [1m[36mPost Destroy (0.8ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 10]]
+  ↳ app/controllers/posts_controller.rb:29:in `destroy'
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:29:in `destroy'
+[active_model_serializers] Rendered PostSerializer with ActiveModelSerializers::Adapter::Attributes (0.17ms)
+Completed 200 OK in 12ms (Views: 0.8ms | ActiveRecord: 6.6ms | Allocations: 4105)
+
+

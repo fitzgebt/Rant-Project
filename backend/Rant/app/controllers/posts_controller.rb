@@ -7,7 +7,6 @@ class PostsController < ApplicationController
     end
 
     def show
-        binding.pry
         post = Post.find_by(id: params[:id])
         render json: post, key_transformation: :camel_lower
     end
