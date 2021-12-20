@@ -16,6 +16,7 @@ class PostsContainer extends Component {
     render() {
 
         const { posts, deletePost } = this.props
+        console.log(deletePost)
         
         return (
             <>
@@ -47,7 +48,8 @@ class PostsContainer extends Component {
                 <Route 
                     exact path="/posts/:id" 
                     render={(routerProps) => {
-                        return <PostCard {...routerProps} post={posts.posts && posts.posts.find(post => post.id === parseInt(routerProps.match.params.id))}/>}
+                        console.log(this.props.deletePost)
+                        return <PostCard {...routerProps} post={posts.posts && posts.posts.find(post => post.id === parseInt(routerProps.match.params.id))} deletePost={this.props.deletePost}/>}
                     }
                 />
 

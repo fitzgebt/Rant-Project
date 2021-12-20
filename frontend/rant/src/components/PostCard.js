@@ -4,8 +4,9 @@ import RANT from '../RANT.PNG'
 
 
 const PostCard = ({ post, deletePost }) => 
-    {if(post) {
+    {console.log(deletePost)
 
+        if(post) {
         return(
             <div class="card" className="card" style={{width: 18 + "rem"}}>
                 <img 
